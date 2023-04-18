@@ -8,9 +8,7 @@
 - [Research Problem](#research)
 - [Data Set](#data)
 - [Methadology](#Methadology)
-- [Getting Started](#getting_started)
-- [Usage](#usage)
-- [Contributing](../CONTRIBUTING.md)
+- [Conclusion](#Conclusion)
 
 ## About <a name = "about"></a>
 Identifying Role Models on Instagram 
@@ -138,6 +136,11 @@ For this approach, `ResNet50`[[2]](#2) was also used as a backbone for the siame
 ![PoseCNN](./images/poseCNN.png) <br>
 
 
+The figure shows the train and validation loss for the complete network. 
+![Loss](./images/train_loss_resnet.png) <br>
+
+
+
 #### **Results**
 
 This approach was able to perform better than the vanilla Siamese Network without Poses. It was able to classify examples with different perspective but same poses. Previous approach failed for such examples. However it is still not able to identify the examples with extreme perspective shift or background noise correctly. The figure below shows the complete results of both methods.
@@ -152,7 +155,9 @@ This approach was able to perform better than the vanilla Siamese Network withou
 
 
 
+## Conclusion <a name = "Conclusion"></a>
 
+We have shown a couple of different approaches to detect similarity in Instagram Images. The main challenges with this task are noisy and small dataset. This is the reason we purposed Siamese Network. The Siamese Network with Pose Estimation performs resonably well achieving an accuracy of 76% on the validation set. To further improve the results, we can use increase the number of keypoints from the pose estimation model. Some foreground extraction methods can also be used to improve the results. We can also use more robust transformations. All of the results from the experiments can be tracked on WandB[[4]](#4)
 
 
 
@@ -166,3 +171,6 @@ He, Kaiming, et al. ‘Deep Residual Learning for Image Recognition’. CoRR, vo
 
 <a id="3">[3]</a> 
 Osokin, Daniil. ‘Real-Time 2D Multi-Person Pose Estimation on CPU: Lightweight OpenPose’. CoRR, vol. abs/1811.12004, 2018, http://arxiv.org/abs/1811.12004.
+
+<a id="4">[4]</a>
+https://wandb.ai/fakeittillyoumakeit/siamese-pose?workspace=user-fakeittillyoumakeit
